@@ -1,0 +1,12 @@
+---
+- name: register locales
+  shell: locale | grep LANG=
+  register: my_locale_lang
+
+- name: Force locale
+  command: locale-gen en_US.UTF-8
+  when: my_locale_lang.stdout != "LANG=en_US.UTF-8"
+
+- name: Force locale
+  command: update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+  when: my_locale_lang.stdout != "LANG=en_US.UTF-8"

@@ -1,0 +1,17 @@
+---
+# Here variables for all nodes
+ssh_user: vagrant
+
+# Examples
+
+## Key-value var
+var1: "value"
+
+## List var
+var2:
+  - "value 1"
+  - "value 2"
+
+## Re-use vars
+var3:
+  - "SSH User : {{ ssh_user }}"

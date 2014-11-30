@@ -1,0 +1,8 @@
+---
+- hosts:
+    - app_nodes 
+  sudo: true
+  remote_user: "{{ ssh_user }}"
+  gather_facts: true
+  roles: 
+  - essential

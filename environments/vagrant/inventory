@@ -1,0 +1,5 @@
+[vagrant:children]
+app_nodes
+
+[app_nodes]
+172.16.0.2

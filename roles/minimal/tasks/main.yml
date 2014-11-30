@@ -1,0 +1,4 @@
+---
+- name: Ensure ansible state dir
+  file: path={{ state_dir }} owner={{ ssh_user }} group={{ ssh_user }} mode=0755 state=directory
+

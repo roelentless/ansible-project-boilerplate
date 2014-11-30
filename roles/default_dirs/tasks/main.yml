@@ -1,0 +1,6 @@
+---
+- name: Ensure app dir
+  file: path={{ app_dir }} owner=root group=root mode=0755 state=directory
+
+- name: Ensure data dir
+  file: path={{ data_dir }} owner=root group=root mode=0755 state=directory

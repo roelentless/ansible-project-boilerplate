@@ -1,0 +1,1 @@
+a: 127.0.0.1 # Every host has to override this in the environment configuration if this var is used 

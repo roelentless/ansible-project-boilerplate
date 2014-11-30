@@ -1,0 +1,7 @@
+# Here you can list role dependencies
+
+dependencies:
+  - { role: minimal }
+  - { role: locale }
+  - { role: timezone }
+  - { role: default_dirs }

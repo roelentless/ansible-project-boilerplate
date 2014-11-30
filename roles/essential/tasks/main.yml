@@ -1,0 +1,15 @@
+---
+- name: Make sure some default packages exist to simplify life
+  apt: pkg={{ item }}
+  with_items:
+    - git
+    - htop
+    - curl
+    - vim
+    - zip
+    - unzip
+    - tree
+    - python-software-properties
+
+- name: Update message of the day
+  template: src=motd dest=/etc/motd owner=root group=root mode=0755

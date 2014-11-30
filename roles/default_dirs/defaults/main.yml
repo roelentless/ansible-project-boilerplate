@@ -1,0 +1,3 @@
+app_dir: /app
+data_dir: /data
+log_dir: /var/log

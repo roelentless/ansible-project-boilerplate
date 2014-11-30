@@ -1,0 +1,16 @@
+---
+- name: Symlink the correct localtime (/etc/localtime)
+  file: src=/usr/share/zoneinfo/{{ timezone }} dest=/etc/localtime state=link owner=root group=root mode=0644 force=yes
+
+- name: Make sure the dependencies are installed
+  apt: name={{ item }} state=installed
+  with_items:
+    - tzdata
+    - ntp
+    - ntpdate
+
+- name: Update the clock for the new timezone data
+  shell: dpkg-reconfigure -f noninteractive tzdata && touch {{ state_dir }}/timezone_configured creates={{ state_dir }}/timezone_configured
+
+- name: Make sure ntpd is running and enabled
+  service: name=ntp state=started enabled=yes
