@@ -16,7 +16,7 @@ The examples are based on debian/ubuntu, they can be easily adjusted for other d
 Vagrant is just another ansible environment, I don't like using the builtin provisioning system of vagrant.
 
 ```
-ap -i environments/vagrant/inventory --private-key ~/.vagrant.d/insecure_private_key complete.yml
+ansible-playbook -i environments/vagrant/inventory --private-key ~/.vagrant.d/insecure_private_key complete.yml
 ```
 
 ## Adding an environment
